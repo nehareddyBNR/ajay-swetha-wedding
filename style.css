@@ -448,94 +448,76 @@ footer h3{
 
 @media (max-width:768px){
 
-    body{
-        overflow-x:hidden;
-    }
-
-    .navbar{
-        flex-direction:column;
-        padding:15px;
-    }
-
-    .navbar ul{
-        gap:15px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
     .hero{
-        padding:120px 15px 50px;
-        background-size:cover;
-        background-position:center top;
+        width:100%;
+        padding:140px 15px 60px;
     }
 
     .hero-content{
         width:100%;
         max-width:100%;
+        margin:0;
         padding:20px;
     }
 
     .couple-name{
         font-size:3rem;
+        word-break:break-word;
     }
 
-    .wedding-date{
-        font-size:2.2rem;
+    .welcome-text{
+        font-size:1rem;
+        letter-spacing:2px;
+    }
+
+    .hero-description{
+        font-size:1rem;
     }
 
     .invitation-section{
-        display:flex;
-        flex-direction:column;
-        padding:50px 15px;
-        gap:25px;
+        display:block;
+        padding:40px 15px;
     }
 
     .invitation-card,
     .countdown-card{
         width:100%;
-        max-width:100%;
-        padding:25px;
+        margin-bottom:20px;
     }
 
-    .invitation-card img{
-        width:220px;
-        height:auto;
-    }
-
-    .countdown{
-        grid-template-columns:repeat(2,1fr);
+    .events-section{
+        padding:60px 15px;
     }
 
     .events-grid{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        gap:20px;
+        display:block;
     }
 
     .event-card{
         width:100%;
-        max-width:300px;
+        max-width:100%;
+        height:auto;
+        margin-bottom:20px;
     }
 
     .events-photo{
-        width:100%;
         text-align:center;
     }
 
     .events-photo img{
-        width:250px;
-        height:auto;
-        border-radius:20px;
+        width:90%;
+        max-width:300px;
+        margin:auto;
     }
 
     .venue-section,
     .thankyou-section{
-        padding:60px 20px;
+        width:100%;
+        padding:50px 15px;
     }
 
     footer{
-        padding:20px;
+        width:100%;
     }
 }
 /* REVEAL ANIMATION */
@@ -754,4 +736,13 @@ footer h3{
     footer{
         padding:25px 15px;
     }
+}
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+*{
+    max-width:100%;
 }
