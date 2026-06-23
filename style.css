@@ -556,3 +556,140 @@ footer h3{
 
     border:5px solid white;
 }
+/* ==========================
+   MOBILE RESPONSIVE FIX
+========================== */
+
+@media screen and (max-width: 768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    /* Navbar */
+
+    .navbar{
+        padding:15px 10px;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .navbar ul{
+        gap:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .logo{
+        font-size:2rem;
+    }
+
+    /* Hero */
+
+    .hero{
+        min-height:100vh;
+        padding:120px 15px 50px;
+        background-position:center top !important;
+    }
+
+    .hero-content{
+        width:100%;
+        max-width:100%;
+        padding:25px;
+    }
+
+    .couple-name{
+        font-size:3rem;
+        line-height:1.2;
+    }
+
+    .wedding-date{
+        font-size:2.2rem;
+    }
+
+    .hero-description{
+        font-size:1rem;
+        line-height:1.8;
+    }
+
+    /* Invitation */
+
+    .invitation-section{
+        display:flex;
+        flex-direction:column;
+        gap:25px;
+        padding:60px 15px;
+    }
+
+    .invitation-card,
+    .countdown-card{
+        width:100%;
+        padding:25px;
+    }
+
+    .invitation-card img{
+        width:100%;
+        max-width:250px;
+        height:auto;
+    }
+
+    /* Countdown */
+
+    .countdown{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+    }
+
+    .countdown span{
+        font-size:2rem;
+    }
+
+    /* Events */
+
+    .events-grid{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .event-card{
+        width:100%;
+        max-width:320px;
+    }
+
+    .events-photo{
+        width:100%;
+        margin-top:20px;
+        text-align:center;
+    }
+
+    .events-photo img{
+        width:100%;
+        max-width:320px;
+        height:auto;
+    }
+
+    /* Venue */
+
+    .venue-section{
+        padding:60px 20px;
+    }
+
+    .venue-section h2{
+        font-size:2.5rem;
+    }
+
+    /* Thank You */
+
+    .thankyou-section{
+        padding:60px 20px;
+    }
+
+    .thankyou-section h2{
+        font-size:2.5rem;
+    }
+
+    footer{
+        padding:25px 15px;
+    }
+}
