@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
 :root{
-    --maroon:#5a0019;
-    --dark-maroon:#3d0011;
-    --gold:#d4af37;
-    --cream:#f5eee6;
-    --white:#ffffff;
+    --maroon:#8B6B4A;
+    --dark-maroon:#5C4033;
+    --gold:#C9A227;
+    --cream:#FAF3EB;
+    --white:#FFFFFF;
 }
 
 /* RESET */
@@ -362,7 +362,7 @@ body{
 
     padding:60px 10%;
 
-    background:;
+    background:#F8F1E7;
 }
 
 .venue-section h2{
@@ -403,7 +403,7 @@ body{
 
     padding:50px 10%;
 
-    background:#fef4e9;
+    background:#F3E8D7;
 }
 
 .thankyou-section h2{
@@ -428,7 +428,7 @@ body{
 
 footer{
 
-    background:var(--maroon);
+    background:#4A3425;
 
     color:white;
 
@@ -486,6 +486,11 @@ footer h3{
     }
 
     .events-section{
+        background:linear-gradient(
+        135deg,
+        #5C4033,
+        #8B6B4A
+    );
         padding:60px 15px;
     }
 
