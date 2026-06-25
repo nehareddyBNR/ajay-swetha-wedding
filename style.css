@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
 :root{
-    --maroon:#8B6B4A;
-    --dark-maroon:#5C4033;
-    --gold:#C9A227;
-    --cream:#FAF3EB;
+    --maroon:#7A5A42;
+    --dark-maroon:#4E392A;
+    --gold:#D4AF37;
+    --cream:#F8F1E7;
     --white:#FFFFFF;
 }
 
@@ -17,54 +17,82 @@
     scroll-behavior:smooth;
 }
 
+html,
 body{
-    font-family:'Poppins',sans-serif;
-    background:var(--cream);
+    width:100%;
     overflow-x:hidden;
 }
 
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--cream);
+    color:#3b2b20;
+    overflow-x:hidden;
+}
 /* NAVBAR */
 
 .navbar{
+
     position:fixed;
+
     top:0;
+
     width:100%;
+
     z-index:1000;
 
-    background:rgba(61,0,17,.92);
+    background:rgba(78,57,42,.95);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 
-    padding:20px 8%;
+    padding:18px 8%;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
+    border-bottom:1px solid rgba(212,175,55,.25);
 }
 
 .logo{
+
     color:var(--gold);
+
     font-family:'Cinzel',serif;
-    font-size:1.7rem;
+
+    font-size:1.9rem;
+
     font-weight:700;
+
+    letter-spacing:1px;
 }
 
 .navbar ul{
+
     display:flex;
+
     gap:35px;
+
     list-style:none;
 }
 
 .navbar a{
+
     text-decoration:none;
+
     color:white;
+
+    font-weight:500;
+
     transition:.3s;
 }
 
 .navbar a:hover{
+
     color:var(--gold);
 }
-
 /* HERO */
 
 .hero{
@@ -72,19 +100,17 @@ body{
     min-height:100vh;
 
     background:
-    linear-gradient(
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.55)
-    ),
-    url("hero.jpg");
+        linear-gradient(
+            rgba(0,0,0,.45),
+            rgba(0,0,0,.55)
+        ),
+        url("hero.jpg");
 
     background-size:cover;
 
     background-repeat:no-repeat;
 
-    background-position:center 25%;
-
-    background-color:#2b0a12;
+    background-position:center 18%;
 
     display:flex;
 
@@ -95,152 +121,285 @@ body{
     text-align:center;
 
     padding:120px 20px;
+
+    position:relative;
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(212,175,55,.12),
+        transparent 45%),
+        radial-gradient(circle at bottom right,
+        rgba(255,255,255,.08),
+        transparent 40%);
+
+    pointer-events:none;
 }
 
 .hero-content{
 
-    max-width:1000px;
+    position:relative;
 
-    padding:40px;
+    z-index:2;
 
-    margin-top:50px;
+    max-width:900px;
 
-    background:
-    rgba(0,0,0,.15);
+    width:100%;
 
-    backdrop-filter:blur(3px);
+    padding:45px;
 
-    border-radius:25px;
+    background:rgba(78,57,42,.22);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(212,175,55,.35);
+
+    border-radius:28px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
 }
+
 .welcome-text{
-    color:white;
-    font-size:1.2rem;
+
+    color:#fff;
+
+    font-size:1.15rem;
+
     letter-spacing:4px;
-    margin-bottom:20px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
 }
 
 .couple-name{
+
     font-family:'Cinzel',serif;
+
     color:var(--gold);
-    font-size:6rem;
-    line-height:1.2;
+
+    font-size:5.8rem;
+
+    line-height:1.15;
+
+    margin-bottom:10px;
 }
 
 .couple-name span{
-    color:white;
+
+    color:#fff;
 }
 
 .gold-divider{
-    width:150px;
+
+    width:170px;
+
     height:3px;
-    background:var(--gold);
-    margin:25px auto;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        var(--gold),
+        transparent
+    );
+
+    margin:28px auto;
 }
 
 .hero-description{
-    color:white;
+
+    color:#fff;
+
+    font-size:1.15rem;
+
     line-height:2;
-    font-size:1.2rem;
+
+    max-width:700px;
+
+    margin:auto;
 }
 
 .wedding-date{
+
     color:var(--gold);
-    margin:30px 0;
+
     font-family:'Cinzel',serif;
+
     font-size:2.8rem;
+
+    margin:35px 0;
 }
 
 .hero-btn{
+
+    display:inline-block;
+
     text-decoration:none;
+
+    color:#4E392A;
 
     background:linear-gradient(
         135deg,
-        var(--gold),
-        #f0d36f
+        #E5C76B,
+        var(--gold)
     );
 
-    color:var(--maroon);
+    padding:16px 40px;
 
-    padding:15px 35px;
-
-    border-radius:40px;
+    border-radius:50px;
 
     font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
+.hero-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 35px rgba(0,0,0,.28);
+}
 /* INVITATION */
 
 .invitation-section{
 
-    padding:100px 10%;
+    padding:100px 8%;
 
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
-    gap:50px;
+    gap:60px;
 
     align-items:center;
+
+    background:linear-gradient(
+        to bottom,
+        #F8F1E7,
+        #FCF8F3
+    );
 }
 
 .invitation-card,
 .countdown-card{
 
-    background:white;
+    background:#FFFDF9;
 
-    padding:40px;
+    padding:45px;
 
-    border-radius:25px;
+    border-radius:30px;
+
+    border:2px solid rgba(212,175,55,.35);
 
     box-shadow:
-    0 10px 35px rgba(0,0,0,.08);
+        0 20px 45px rgba(0,0,0,.08);
 
-    border:2px solid #f4e0a0;
+    transition:.35s;
 }
-.countdown-card{
 
-    max-width:1200px;
+.invitation-card:hover,
+.countdown-card:hover{
 
-    margin:auto;
+    transform:translateY(-8px);
 
-    margin-top:50px;
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.12);
 }
+
 .invitation-card{
+
     text-align:center;
 }
 
 .invitation-card img{
+
     width:100%;
-    max-width:450px;
+
+    max-width:430px;
+
     height:auto;
+
     display:block;
-    margin:0 auto 25px;
-    border-radius:25px;
+
+    margin:0 auto 30px;
+
+    border-radius:24px;
+
     border:5px solid var(--gold);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.15);
 }
 
-.invitation-card h2,
-.countdown-card h2{
+.invitation-card h2{
 
     color:var(--maroon);
 
     font-family:'Cinzel',serif;
 
-    margin-bottom:20px;
+    font-size:2.3rem;
+
+    margin-bottom:18px;
 }
 
 .invitation-card p{
-    line-height:1.9;
+
+    color:#5a4636;
+
+    line-height:2;
+
+    font-size:1.05rem;
 }
 
 .invitation-card h3{
-    margin-top:20px;
+
+    margin-top:30px;
+
+    color:#5C4033;
+
+    font-size:1.2rem;
 }
 
 .invitation-card h4{
+
+    margin-top:10px;
+
     color:var(--gold);
+
+    letter-spacing:2px;
+
+    font-family:'Cinzel',serif;
+
+    font-size:1.3rem;
 }
 
+.countdown-card{
+
+    width:100%;
+}
+
+.countdown-card h2{
+
+    text-align:center;
+
+    color:var(--maroon);
+
+    font-family:'Cinzel',serif;
+
+    font-size:2.2rem;
+
+    margin-bottom:30px;
+}
 /* COUNTDOWN */
 
 .countdown{
@@ -249,283 +408,444 @@ body{
 
     grid-template-columns:repeat(2,1fr);
 
-    gap:20px;
+    gap:22px;
 
-    margin-top:30px;
+    margin-top:35px;
 }
 
 .countdown div{
 
-    background:var(--cream);
+    background:linear-gradient(
+        145deg,
+        #FFFDF9,
+        #F6EBDD
+    );
 
-    padding:25px;
+    border:2px solid rgba(212,175,55,.30);
 
-    border-radius:20px;
+    border-radius:22px;
+
+    padding:30px 20px;
 
     text-align:center;
+
+    transition:.35s;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.06);
+}
+
+.countdown div:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.12);
 }
 
 .countdown span{
 
     display:block;
 
-    color:var(--maroon);
-
     font-size:3rem;
 
-    font-weight:bold;
+    font-weight:700;
+
+    color:var(--maroon);
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:10px;
 }
 
+.countdown p{
+
+    color:#6d5645;
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
 /* EVENTS */
 
 .events-section{
 
-    background:
-    linear-gradient(
+    padding:100px 8%;
+
+    background:linear-gradient(
         135deg,
-        var(--dark-maroon),
-        var(--maroon)
+        #4E392A 0%,
+        #6F523B 50%,
+        #8B6B4A 100%
     );
 
-    padding:100px 10%;
+    position:relative;
+
+    overflow:hidden;
+}
+
+.events-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(212,175,55,.08);
+
+    top:-120px;
+
+    left:-120px;
+}
+
+.events-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    bottom:-100px;
+
+    right:-80px;
 }
 
 .events-section h2{
 
     text-align:center;
 
-    color:var(--gold);
+    color:#fff;
 
     font-family:'Cinzel',serif;
 
-    font-size:3rem;
+    font-size:3.2rem;
 
-    margin-bottom:50px;
+    margin-bottom:60px;
+
+    position:relative;
+
+    z-index:2;
 }
+
 .events-grid{
 
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
-    gap:50px;
+    gap:70px;
 
     align-items:center;
+
+    position:relative;
+
+    z-index:2;
 }
-.events-photo img{
-    width:100%;
-    max-width:500px;
-    height:auto;
-    display:block;
-    border-radius:25px;
-    border:5px solid var(--gold);
-}
+
+/* LEFT SIDE */
+
 .event-card{
 
-    max-width:550px;
+    background:rgba(255,255,255,.97);
 
-    height:180px;
+    border-radius:24px;
 
     padding:30px;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 
-    background:white;
+    border-left:6px solid var(--gold);
 
-    color:#333;
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
 
-    border:2px solid var(--gold);
-
-    border-radius:25px;
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.08);
+    transition:.35s;
 }
+
+.event-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.25);
+}
+
 .event-card h3{
 
-    color:var(--gold);
-
-    margin-bottom:20px;
-}
-
-/* GALLERY */
-
-.gallery-grid img:hover{
-
-    transform:scale(1.05);
-}
-
-/* VENUE */
-.venue-section{
-
-    text-align:center;
-
-    padding:60px 10%;
-
-    background:#F8F1E7;
-}
-
-.venue-section h2{
-
-    color:var(--maroon);
-
-    font-family:'Cinzel',serif;
-
-    font-size:3rem;
-
-    margin-bottom:30px;
-}
-
-.venue-section p{
-    margin:20px 0;
-}
-
-.venue-btn{
-
-    display:inline-block;
-
-    text-decoration:none;
-
-    background:var(--maroon);
-
-    color:white;
-
-    padding:15px 35px;
-
-    border-radius:40px;
-}
-
-/* THANK YOU */
-
-.thankyou-section{
-
-    text-align:center;
-
-    padding:50px 10%;
-
-    background:#F3E8D7;
-}
-
-.thankyou-section h2{
-
-    font-size:3rem;
-
     font-family:'Cinzel',serif;
 
     color:var(--maroon);
 
-    margin-bottom:30px;
+    font-size:1.8rem;
+
+    margin-bottom:18px;
 }
 
-.thankyou-section p{
+.event-card p{
 
-    margin-bottom:30px;
+    color:#555;
 
-    font-size:1.1rem;
+    line-height:1.9;
+
+    font-size:1.05rem;
 }
 
-/* FOOTER */
+/* RIGHT SIDE */
 
-footer{
+.events-photo{
 
-    background:#4A3425;
+    display:flex;
 
-    color:white;
+    justify-content:center;
 
-    text-align:center;
-
-    padding:35px;
+    align-items:center;
 }
 
-footer h3{
+.events-photo img{
 
-    color:var(--gold);
+    width:100%;
 
-    margin-bottom:10px;
+    max-width:470px;
+
+    border-radius:28px;
+
+    border:6px solid rgba(212,175,55,.7);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.35);
+
+    transition:.4s;
+}
+
+.events-photo img:hover{
+
+    transform:scale(1.03);
 }
 
 /* MOBILE */
 
 @media (max-width:768px){
 
-    .hero{
-        width:100%;
-        padding:140px 15px 60px;
-    }
-
-    .hero-content{
-        width:100%;
-        max-width:100%;
-        margin:0;
-        padding:20px;
-    }
-
-    .couple-name{
-        font-size:3rem;
-        word-break:break-word;
-    }
-
-    .welcome-text{
-        font-size:1rem;
-        letter-spacing:2px;
-    }
-
-    .hero-description{
-        font-size:1rem;
-    }
-
-    .invitation-section{
-        display:block;
-        padding:40px 15px;
-    }
-
-    .invitation-card,
-    .countdown-card{
-        width:100%;
-        margin-bottom:20px;
-    }
-
     .events-section{
-        background:linear-gradient(
-        135deg,
-        #5C4033,
-        #8B6B4A
-    );
-        padding:60px 15px;
+
+        padding:70px 20px;
+    }
+
+    .events-section h2{
+
+        font-size:2.5rem;
+
+        margin-bottom:40px;
     }
 
     .events-grid{
-        display:block;
-    }
 
-    .event-card{
-        width:100%;
-        max-width:100%;
-        height:auto;
-        margin-bottom:20px;
-    }
+        display:flex;
 
-    .events-photo{
-        text-align:center;
+        flex-direction:column-reverse;
+
+        gap:35px;
     }
 
     .events-photo img{
-        width:90%;
-        max-width:300px;
-        margin:auto;
+
+        max-width:320px;
     }
 
-    .venue-section,
-    .thankyou-section{
+    .event-card{
+
         width:100%;
-        padding:50px 15px;
+
+        margin-bottom:18px;
+
+        padding:25px;
     }
 
-    footer{
-        width:100%;
+    .event-card h3{
+
+        font-size:1.5rem;
     }
 }
-/* REVEAL ANIMATION */
+/* ===========================
+   VENUE
+=========================== */
+
+.venue-section{
+
+    padding:100px 8%;
+
+    text-align:center;
+
+    background:linear-gradient(
+        to bottom,
+        #FCF8F3,
+        #F7EFE5
+    );
+}
+
+.venue-section h2{
+
+    font-family:'Cinzel',serif;
+
+    color:var(--maroon);
+
+    font-size:3rem;
+
+    margin-bottom:25px;
+}
+
+.venue-section h3{
+
+    color:#5C4033;
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+}
+
+.venue-section p{
+
+    font-size:1.1rem;
+
+    color:#6E5745;
+
+    margin-bottom:35px;
+
+    line-height:1.8;
+}
+
+.venue-btn{
+
+    display:inline-block;
+
+    padding:16px 40px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        var(--dark-maroon),
+        var(--maroon)
+    );
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+.venue-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.25);
+}
+
+/* ===========================
+   THANK YOU
+=========================== */
+
+.thankyou-section{
+
+    padding:90px 8%;
+
+    text-align:center;
+
+    background:linear-gradient(
+        to bottom,
+        #F7EFE5,
+        #F2E5D7
+    );
+}
+
+.thankyou-section h2{
+
+    font-family:'Cinzel',serif;
+
+    font-size:3rem;
+
+    color:var(--maroon);
+
+    margin-bottom:25px;
+}
+
+.thankyou-section p{
+
+    color:#5C4033;
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    margin-bottom:30px;
+}
+
+.thankyou-section h3{
+
+    color:var(--gold);
+
+    font-family:'Cinzel',serif;
+
+    font-size:2rem;
+
+    letter-spacing:1px;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    background:#4E392A;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px 20px;
+}
+
+footer h3{
+
+    color:var(--gold);
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:12px;
+
+    font-size:1.7rem;
+}
+
+footer p{
+
+    opacity:.9;
+}
+
+/* ===========================
+   SCROLL ANIMATION
+=========================== */
 
 .hidden{
 
@@ -533,7 +853,7 @@ footer h3{
 
     transform:translateY(50px);
 
-    transition:1s;
+    transition:all .9s ease;
 }
 
 .show{
@@ -543,17 +863,23 @@ footer h3{
     transform:translateY(0);
 }
 
-/* PETALS */
+/* ===========================
+   PETALS
+=========================== */
 
 .petal{
 
-    position:absolute;
+    position:fixed;
 
-    opacity:.5;
+    top:-40px;
 
-    z-index:1;
+    z-index:999;
 
     pointer-events:none;
+
+    animation:fall linear infinite;
+
+    opacity:.8;
 }
 
 @keyframes fall{
@@ -563,7 +889,6 @@ footer h3{
         transform:
         translateY(-100px)
         rotate(0deg);
-
     }
 
     to{
@@ -571,11 +896,12 @@ footer h3{
         transform:
         translateY(110vh)
         rotate(360deg);
-
     }
 }
 
-/* IMAGE POPUP */
+/* ===========================
+   IMAGE POPUP
+=========================== */
 
 .image-popup{
 
@@ -583,8 +909,7 @@ footer h3{
 
     inset:0;
 
-    background:
-    rgba(0,0,0,.85);
+    background:rgba(0,0,0,.9);
 
     display:flex;
 
@@ -597,157 +922,129 @@ footer h3{
 
 .image-popup img{
 
-    max-width:90%;
+    max-width:92%;
 
     max-height:90vh;
 
-    border-radius:20px;
+    border-radius:25px;
 
-    border:5px solid white;
+    border:5px solid var(--gold);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
 }
-/* ==========================
-   MOBILE RESPONSIVE FIX
-========================== */
 
-@media screen and (max-width: 768px){
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
 
+@media(max-width:768px){
+
+    html,
     body{
+
         overflow-x:hidden;
     }
 
-    /* Navbar */
-
     .navbar{
-        padding:15px 10px;
+
         flex-direction:column;
-        gap:10px;
+
+        padding:15px;
     }
 
     .navbar ul{
-        gap:20px;
+
+        gap:14px;
+
         flex-wrap:wrap;
+
         justify-content:center;
     }
 
     .logo{
-        font-size:2rem;
+
+        font-size:1.7rem;
     }
 
-    /* Hero */
-
     .hero{
+
         min-height:100vh;
-        padding:120px 15px 50px;
-        background-position:center top !important;
+
+        padding:140px 15px 70px;
+
+        background-position:center top;
     }
 
     .hero-content{
-        width:100%;
-        max-width:100%;
-        padding:25px;
+
+        padding:22px;
     }
 
     .couple-name{
-        font-size:3rem;
-        line-height:1.2;
-    }
 
-    .wedding-date{
-        font-size:2.2rem;
+        font-size:3rem;
     }
 
     .hero-description{
+
         font-size:1rem;
+
         line-height:1.8;
     }
 
-    /* Invitation */
+    .wedding-date{
+
+        font-size:2rem;
+    }
 
     .invitation-section{
+
         display:flex;
+
         flex-direction:column;
+
         gap:25px;
-        padding:60px 15px;
     }
 
     .invitation-card,
     .countdown-card{
+
         width:100%;
-        padding:25px;
     }
 
     .invitation-card img{
-        width:100%;
-        max-width:250px;
-        height:auto;
+
+        max-width:270px;
     }
 
-    /* Countdown */
-
     .countdown{
-        grid-template-columns:repeat(2,1fr);
-        gap:15px;
+
+        gap:12px;
     }
 
     .countdown span{
+
         font-size:2rem;
     }
 
-    /* Events */
-
-    .events-grid{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-    }
-
-    .event-card{
-        width:100%;
-        max-width:320px;
-    }
-
-    .events-photo{
-        width:100%;
-        margin-top:20px;
-        text-align:center;
-    }
-
-    .events-photo img{
-        width:100%;
-        max-width:320px;
-        height:auto;
-    }
-
-    /* Venue */
-
-    .venue-section{
-        padding:60px 20px;
-    }
-
-    .venue-section h2{
-        font-size:2.5rem;
-    }
-
-    /* Thank You */
-
-    .thankyou-section{
-        padding:60px 20px;
-    }
-
+    .venue-section h2,
     .thankyou-section h2{
-        font-size:2.5rem;
+
+        font-size:2.3rem;
+    }
+
+    .venue-section h3{
+
+        font-size:1.5rem;
+    }
+
+    .thankyou-section h3{
+
+        font-size:1.5rem;
     }
 
     footer{
-        padding:25px 15px;
-    }
-}
-html,
-body{
-    width:100%;
-    overflow-x:hidden;
-}
 
-*{
-    max-width:100%;
+        padding:25px;
+    }
 }
