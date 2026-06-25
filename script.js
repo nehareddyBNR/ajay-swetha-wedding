@@ -1,87 +1,69 @@
-// ==========================
-// WEDDING COUNTDOWN
-// ==========================
+/* ==========================================
+        WEDDING COUNTDOWN
+========================================== */
 
 const weddingDate = new Date("July 09, 2026 10:30:00").getTime();
 
-const timer = setInterval(() => {
+const countdown = () => {
 
     const now = new Date().getTime();
 
     const distance = weddingDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    if(distance < 0){
+
+        document.getElementById("days").innerHTML="00";
+        document.getElementById("hours").innerHTML="00";
+        document.getElementById("minutes").innerHTML="00";
+        document.getElementById("seconds").innerHTML="00";
+
+        return;
+    }
+
+    const days = Math.floor(distance / (1000*60*60*24));
 
     const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
+        (distance % (1000*60*60*24))
+        /(1000*60*60)
     );
 
     const minutes = Math.floor(
-        (distance % (1000 * 60 * 60))
-        / (1000 * 60)
+        (distance % (1000*60*60))
+        /(1000*60)
     );
 
     const seconds = Math.floor(
-        (distance % (1000 * 60))
-        / 1000
+        (distance % (1000*60))
+        /1000
     );
 
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
+    document.getElementById("days").innerHTML = days;
 
-    if (distance < 0) {
+    document.getElementById("hours").innerHTML =
+        String(hours).padStart(2,"0");
 
-        clearInterval(timer);
+    document.getElementById("minutes").innerHTML =
+        String(minutes).padStart(2,"0");
 
-        document.querySelector(".countdown").innerHTML = `
-            <h2 style="grid-column:1/-1;color:#5a0019;">
-                💍 Wedding Day Has Arrived 💍
-            </h2>
-        `;
-    }
+    document.getElementById("seconds").innerHTML =
+        String(seconds).padStart(2,"0");
 
-}, 1000);
+}
 
+countdown();
 
-// ==========================
-// NAVBAR SCROLL EFFECT
-// ==========================
-
-window.addEventListener("scroll", () => {
-
-    const navbar = document.querySelector(".navbar");
-
-    if (window.scrollY > 50) {
-
-        navbar.style.background =
-            "rgba(78,57,42,.95)";
-
-        navbar.style.boxShadow =
-            "0 5px 20px rgba(0,0,0,0.25)";
-
-    } else {
-
-        navbar.style.background =
-            "rgba(61,0,17,0.92)";
-
-        navbar.style.boxShadow = "none";
-    }
-
-});
+setInterval(countdown,1000);
 
 
-// ==========================
-// SCROLL REVEAL
-// ==========================
+/* ==========================================
+        SCROLL REVEAL
+========================================== */
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(entries=>{
 
-    entries.forEach(entry => {
+    entries.forEach(entry=>{
 
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
 
             entry.target.classList.add("show");
 
@@ -89,74 +71,115 @@ const observer = new IntersectionObserver((entries) => {
 
     });
 
-}, {
-    threshold: 0.15
 });
 
-document.querySelectorAll(
-    ".invitation-card,.countdown-card,.event-card,.gallery-grid img,.venue-section,.thankyou-section"
-).forEach(el => {
-
-    el.classList.add("hidden");
+document.querySelectorAll(".hidden").forEach(el=>{
 
     observer.observe(el);
 
 });
 
 
-// ==========================
-// FLOATING PETALS
-// ==========================
+/* ==========================================
+        NAVBAR EFFECT
+========================================== */
 
-for(let i=0;i<25;i++){
+window.addEventListener("scroll",()=>{
 
-    const petal = document.createElement("div");
+    const nav=document.querySelector(".navbar");
+
+    if(window.scrollY>50){
+
+        nav.style.background="rgba(78,54,41,.98)";
+
+    }
+
+    else{
+
+        nav.style.background="rgba(78,54,41,.94)";
+
+    }
+
+});
+
+
+/* ==========================================
+        IMAGE POPUP
+========================================== */
+
+document.querySelectorAll("img").forEach(image=>{
+
+    image.addEventListener("click",()=>{
+
+        const popup=document.createElement("div");
+
+        popup.className="image-popup";
+
+        popup.innerHTML=
+
+        `<img src="${image.src}">`;
+
+        document.body.appendChild(popup);
+
+        popup.onclick=()=>{
+
+            popup.remove();
+
+        }
+
+    });
+
+});
+
+
+/* ==========================================
+        FALLING PETALS
+========================================== */
+
+function createPetal(){
+
+    const petal=document.createElement("div");
 
     petal.classList.add("petal");
 
-    petal.innerHTML = "🌸";
+    petal.innerHTML="🍂";
 
-    petal.style.left =
-        Math.random() * 100 + "vw";
+    petal.style.left=Math.random()*100+"vw";
 
-    petal.style.fontSize =
-        (15 + Math.random()*15) + "px";
+    petal.style.fontSize=(18+Math.random()*18)+"px";
 
-    petal.style.animationDuration =
-        (8 + Math.random()*8) + "s";
+    petal.style.animationDuration=(8+Math.random()*8)+"s";
 
-    petal.style.opacity =
-        Math.random();
+    petal.style.opacity=Math.random();
 
     document.body.appendChild(petal);
+
+    setTimeout(()=>{
+
+        petal.remove();
+
+    },16000);
+
 }
 
+setInterval(createPetal,500);
 
-// ==========================
-// GALLERY POPUP
-// ==========================
 
-const galleryImages =
-document.querySelectorAll(".gallery-grid img");
+/* ==========================================
+        SMOOTH SCROLL
+========================================== */
 
-galleryImages.forEach(img => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
-    img.addEventListener("click", () => {
+    anchor.addEventListener("click",function(e){
 
-        const overlay =
-        document.createElement("div");
+        e.preventDefault();
 
-        overlay.classList.add("image-popup");
+        document.querySelector(this.getAttribute("href"))
 
-        overlay.innerHTML = `
-            <img src="${img.src}">
-        `;
+        .scrollIntoView({
 
-        document.body.appendChild(overlay);
-
-        overlay.addEventListener("click", () => {
-
-            overlay.remove();
+            behavior:"smooth"
 
         });
 
