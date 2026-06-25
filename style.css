@@ -684,163 +684,81 @@ body{
    VENUE
 =========================== */
 
+/* VENUE */
+
 .venue-section{
-
-    padding:100px 8%;
-
     text-align:center;
-
-    background:linear-gradient(
-        to bottom,
-        #FCF8F3,
-        #F7EFE5
-    );
+    padding:90px 10%;
+    background:linear-gradient(135deg,#EFE2D1,#D9C1A7);
 }
 
 .venue-section h2{
-
+    color:#5C4033;
     font-family:'Cinzel',serif;
-
-    color:var(--maroon);
-
     font-size:3rem;
-
-    margin-bottom:25px;
+    margin-bottom:30px;
 }
 
 .venue-section h3{
-
-    color:#5C4033;
-
+    color:#4E392A;
     font-size:2rem;
-
-    margin-bottom:20px;
-
-    font-weight:600;
+    margin-bottom:15px;
 }
 
 .venue-section p{
-
+    color:#6B4F3A;
     font-size:1.1rem;
-
-    color:#6E5745;
-
-    margin-bottom:35px;
-
-    line-height:1.8;
+    margin:20px 0 35px;
 }
 
 .venue-btn{
-
     display:inline-block;
-
-    padding:16px 40px;
-
     text-decoration:none;
-
-    color:white;
-
-    background:linear-gradient(
-        135deg,
-        var(--dark-maroon),
-        var(--maroon)
-    );
-
-    border-radius:50px;
-
+    background:#6B4F3A;
+    color:#fff;
+    padding:15px 40px;
+    border-radius:40px;
     font-weight:600;
-
-    transition:.35s;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
+    transition:.3s;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
 .venue-btn:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 18px 35px rgba(0,0,0,.25);
+    background:#4E392A;
+    transform:translateY(-3px);
 }
-
 /* ===========================
    THANK YOU
 =========================== */
 
+/* THANK YOU */
+
 .thankyou-section{
-
-    padding:90px 8%;
-
     text-align:center;
-
-    background:linear-gradient(
-        to bottom,
-        #F7EFE5,
-        #F2E5D7
-    );
+    padding:90px 10%;
+    background:linear-gradient(135deg,#FFF6EF,#F8E9DB);
+    border-top:2px solid rgba(201,162,39,.3);
 }
 
 .thankyou-section h2{
-
-    font-family:'Cinzel',serif;
-
     font-size:3rem;
-
-    color:var(--maroon);
-
-    margin-bottom:25px;
-}
-
-.thankyou-section p{
-
-    color:#5C4033;
-
-    font-size:1.15rem;
-
-    line-height:2;
-
+    font-family:'Cinzel',serif;
+    color:#8B5E3C;
     margin-bottom:30px;
 }
 
+.thankyou-section p{
+    margin-bottom:30px;
+    font-size:1.15rem;
+    color:#5C4033;
+    line-height:2;
+}
+
 .thankyou-section h3{
-
-    color:var(--gold);
-
+    color:#6B4F3A;
+    font-size:1.6rem;
+    line-height:1.8;
     font-family:'Cinzel',serif;
-
-    font-size:2rem;
-
-    letter-spacing:1px;
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-footer{
-
-    background:#4E392A;
-
-    color:white;
-
-    text-align:center;
-
-    padding:35px 20px;
-}
-
-footer h3{
-
-    color:var(--gold);
-
-    font-family:'Cinzel',serif;
-
-    margin-bottom:12px;
-
-    font-size:1.7rem;
-}
-
-footer p{
-
-    opacity:.9;
 }
 
 /* ===========================
